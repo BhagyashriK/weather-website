@@ -2,7 +2,7 @@ const request = require('request');
 
 // Get Lat Long for pune 
 const getGeoLocation = (searchTerm, callback) => {
-  const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(searchTerm)}.json?access_token=pk.eyJ1IjoiYmhhZ3lhc2hyaWprIiwiYSI6ImNqeXZoczNwMTBsOHozbm55YWNtMW01N3kifQ.sOE1W42JdWM47-Ii3K8MZQ`;
+  const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(searchTerm)}.json?access_token=${process.env.GEO_LOCATION_KEY}`;
   request({url, json: true}, (error, {body} = {}) => {
     if(error) {
       callback('Unable to connect to geo location service', undefined);
