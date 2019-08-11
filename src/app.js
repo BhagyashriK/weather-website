@@ -1,12 +1,13 @@
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
+require('dotenv').config();
 
 const getGeoLocation = require('./utils/geoLocation');
 const getForcast = require('./utils/forcast');
 
 const app = express();
-const port = process.env.PORT || 3009;
+const port = process.env.PORT;
 
 // Define paths for Express config
 const publicDirPath = path.join(__dirname, '../public');
