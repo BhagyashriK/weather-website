@@ -6,7 +6,7 @@ const messageTwo = document.getElementById('message-2');
 const getWeather = (searchTerm) => {
   messageOne.textContent="Loading ...";
   messageTwo.textContent = "";
-  fetch(`http://localhost:3009/weather?address=${searchTerm}`).then(repsonse => {
+  fetch(`/weather?address=${searchTerm}`).then(repsonse => {
     repsonse.json().then(data => {
       if(data.error) {
         messageOne.textContent="";

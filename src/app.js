@@ -6,6 +6,7 @@ const getGeoLocation = require('./utils/geoLocation');
 const getForcast = require('./utils/forcast');
 
 const app = express();
+const port = process.env.PORT || 3009;
 
 // Define paths for Express config
 const publicDirPath = path.join(__dirname, '../public');
@@ -84,6 +85,6 @@ app.get('*', (req, res) => {
   res.render('error', {error: 'Page not found', name: 'Bhagyashri'})
 });
 
-app.listen(3009, () => {
-  console.log('Server is up on port 3009');
+app.listen(port, () => {
+  console.log('Server is up on port', port);
 });
